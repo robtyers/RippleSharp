@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C983D265-CD2E-4242-974E-2535326E9059}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RippleSharp.Rippled</RootNamespace>
+    <AssemblyName>RippleSharp.Rippled</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\RpcJson\Requests\AccountInformationRequests.cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\AccountCurrencyRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\AccountInfoRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\AccountLinesRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\AccountObjectsRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\AccountOffersRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\AccountTxRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\GatewayBalancesRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\NorippleCheckRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\AccountInformation\WalletProposeRequest..cs" />
+    <Compile Include="Client\RpcJson\Requests\ConvenienceRequests.cs" />
+    <Compile Include="Client\RpcJson\Requests\Convenience\ConnectRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Convenience\PingRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Convenience\RandomRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Convenience\StopRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\LedgerRequests.cs" />
+    <Compile Include="Client\RpcJson\Requests\Ledger\LedgerClosedRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Ledger\LedgerCurrentRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Ledger\LedgerDataRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Ledger\LedgerEntryRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Ledger\LedgerRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\RequestBase.cs" />
+    <Compile Include="Client\RpcJson\Requests\ServerRequests.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\CanDeleteRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\ConsensusInfoRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\FeatureRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\FeeRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\FetchInfoRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\GetCountsRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\ServerInfoRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\ServerStateRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Server\ValidationCreateRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\TransactionRequests.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\BookOffersRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\RipplePathFindRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\SignAndSubmitRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\SignForRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\SignRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\SubmitMultisignedRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\SubmitOnlyRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\TransactionEntryRequest.cs" />
+    <Compile Include="Client\RpcJson\Requests\Transactions\TxRequest.cs" />
+    <Compile Include="Client\RpcJson\RpcJsonClient.cs" />
+    <Compile Include="Client\RpcJson\RpcJsonRequest.cs" />
+    <Compile Include="Client\RpcJson\RpcJsonResponse.cs" />
+    <Compile Include="Constants\ApiCommands.cs" />
+    <Compile Include="Constants\KeyType.cs" />
+    <Compile Include="Constants\LedgerEntryType.cs" />
+    <Compile Include="Enums\Error.cs" />
+    <Compile Include="Constants\JobType.cs" />
+    <Compile Include="Enums\LedgerEntryType.cs" />
+    <Compile Include="Enums\LedgerIndex.cs" />
+    <Compile Include="Enums\LedgerNodeType.cs" />
+    <Compile Include="Enums\Role.cs" />
+    <Compile Include="Enums\ServerState.cs" />
+    <Compile Include="Enums\Status.cs" />
+    <Compile Include="Enums\TransactionType.cs" />
+    <Compile Include="Interfaces\IAmount.cs" />
+    <Compile Include="Interfaces\IDefaultResolver.cs" />
+    <Compile Include="Interfaces\ILedgerNode.cs" />
+    <Compile Include="Interfaces\IPosition.cs" />
+    <Compile Include="Interfaces\IRippledClient.cs" />
+    <Compile Include="Interfaces\IRippledCommand.cs" />
+    <Compile Include="Interfaces\IRippledRequest.cs" />
+    <Compile Include="Interfaces\IRippledResult.cs" />
+    <Compile Include="Client\RpcJson\IRpcJsonResponse.cs" />
+    <Compile Include="Interfaces\ITransaction.cs" />
+    <Compile Include="Json\Converters.cs" />
+    <Compile Include="Json\Extensions.cs" />
+    <Compile Include="Json\Resolvers.cs" />
+    <Compile Include="Models\Requests\AccountInformation\AccountCurrencyRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\AccountInfoRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\AccountLinesRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\AccountObjectsRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\AccountOffersRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\AccountTxRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\GatewayBalancesRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\NorippleCheckRequestParams.cs" />
+    <Compile Include="Models\Requests\AccountInformation\WalletProposeRequestParams.cs" />
+    <Compile Include="Models\Requests\Convenience\ConnectRequestParams.cs" />
+    <Compile Include="Models\Requests\Convenience\PingRequestParams.cs" />
+    <Compile Include="Models\Requests\Convenience\RandomRequestParams.cs" />
+    <Compile Include="Models\Requests\Convenience\StopRequestParams.cs" />
+    <Compile Include="Models\Requests\Ledger\LedgerClosedRequestParams.cs" />
+    <Compile Include="Models\Requests\Ledger\LedgerCurrentRequestParams.cs" />
+    <Compile Include="Models\Requests\Ledger\LedgerDataRequestParams.cs" />
+    <Compile Include="Models\Requests\Ledger\LedgerEntryRequestParams.cs" />
+    <Compile Include="Models\Requests\Ledger\LedgerRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\CanDeleteRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\ConsensusInfoRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\FeatureRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\FeeRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\FetchInfoRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\GetCountsRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\ServerInfoRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\ServerStateRequestParams.cs" />
+    <Compile Include="Models\Requests\Server\ValidationCreateRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\BookOffersRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\RipplePathFindRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\SignAndSubmitRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\SignForRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\SignRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\SubmitMultisignedRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\SubmitOnlyRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\TransactionEntryRequestParams.cs" />
+    <Compile Include="Models\Requests\Transactions\TxRequestParams.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountCurrencyResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountInfoResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountLinesResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountObjectsResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountOffers.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountOffersResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\AccountTxResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\GatewayBalancesResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\NorippleCheckResult.cs" />
+    <Compile Include="Models\Responses\AccountInformation\WalletProposeResult.cs" />
+    <Compile Include="Models\Responses\Convenience\ConnectResult.cs" />
+    <Compile Include="Models\Responses\Convenience\PingResult.cs" />
+    <Compile Include="Models\Responses\Convenience\RandomResult.cs" />
+    <Compile Include="Models\Responses\Convenience\StopResult.cs" />
+    <Compile Include="Models\Responses\Ledger\LedgerClosedResult.cs" />
+    <Compile Include="Models\Responses\Ledger\LedgerCurrentResult.cs" />
+    <Compile Include="Models\Responses\Ledger\LedgerDataResult.cs" />
+    <Compile Include="Models\Responses\Ledger\LedgerEntryResult.cs" />
+    <Compile Include="Models\Responses\Ledger\LedgerResult.cs" />
+    <Compile Include="Models\Responses\RippledResult.cs" />
+    <Compile Include="Interfaces\IJobType.cs" />
+    <Compile Include="Models\Responses\Server\CanDeleteResult.cs" />
+    <Compile Include="Models\Responses\Server\ConsensusInfoResult.cs" />
+    <Compile Include="Models\Responses\Server\FeatureResult.cs" />
+    <Compile Include="Models\Responses\Server\FeeResult.cs" />
+    <Compile Include="Models\Responses\Server\FetchInfoResult.cs" />
+    <Compile Include="Models\Responses\Server\ServerStateResult.cs" />
+    <Compile Include="Models\Responses\Server\ValidationCreateResult.cs" />
+    <Compile Include="Models\Shared\Server\ConsensusInfo.cs" />
+    <Compile Include="Models\Shared\Server\Drops.cs" />
+    <Compile Include="Models\Shared\Server\Feature.cs" />
+    <Compile Include="Models\Shared\Server\FetchInfo.cs" />
+    <Compile Include="Models\Responses\Server\GetCountsResult.cs" />
+    <Compile Include="Models\Shared\Server\JobTypeInProgress.cs" />
+    <Compile Include="Models\Shared\Server\JobTypePerSecond.cs" />
+    <Compile Include="Models\Shared\Server\LastClose.cs" />
+    <Compile Include="Models\Shared\Server\Levels.cs" />
+    <Compile Include="Models\Shared\Server\Load.cs" />
+    <Compile Include="Models\Shared\Server\PeerPosition.cs" />
+    <Compile Include="Models\Shared\Server\Position.cs" />
+    <Compile Include="Models\Shared\Server\ServerInfo.cs" />
+    <Compile Include="Models\Responses\Server\ServerInfoResult.cs" />
+    <Compile Include="Models\Shared\Server\ServerTime.cs" />
+    <Compile Include="Models\Shared\Server\StateAccounting.cs" />
+    <Compile Include="Models\Shared\Server\ValidatedLedger.cs" />
+    <Compile Include="Models\Responses\Transactions\BookOffersResult.cs" />
+    <Compile Include="Models\Responses\Transactions\RipplePathFindResult.cs" />
+    <Compile Include="Models\Responses\Transactions\SignResult.cs" />
+    <Compile Include="Models\Responses\Transactions\SubmitResult.cs" />
+    <Compile Include="Models\Responses\Transactions\TransactionEntryResult.cs" />
+    <Compile Include="Models\Responses\Transactions\TxResult.cs" />
+    <Compile Include="Models\Shared\CurrencyIssuer.cs" />
+    <Compile Include="Models\Shared\CurrencyIssuerAmount.cs" />
+    <Compile Include="Models\Shared\CurrencyIssuerValue.cs" />
+    <Compile Include="Models\Shared\CurrencyValue.cs" />
+    <Compile Include="Models\Shared\LedgerNode\AccountRoot.cs" />
+    <Compile Include="Models\Shared\LedgerNode\DirectoryNode.cs" />
+    <Compile Include="Models\Shared\LedgerNode\Offer.cs" />
+    <Compile Include="Models\Shared\LedgerNode\RippleState.cs" />
+    <Compile Include="Models\Shared\LedgerNode\SignerList.cs" />
+    <Compile Include="Models\Shared\Ledger\LedgerHeader.cs" />
+    <Compile Include="Models\Shared\Ledger\LedgerState.cs" />
+    <Compile Include="Models\Shared\Path.cs" />
+    <Compile Include="Models\Shared\Server\State.cs" />
+    <Compile Include="Models\Shared\SignerEntry.cs" />
+    <Compile Include="Models\Shared\Transactions\AccountSet.cs" />
+    <Compile Include="Models\Shared\Transactions\BookOffer.cs" />
+    <Compile Include="Models\Shared\Transactions\OfferCancel.cs" />
+    <Compile Include="Models\Shared\Transactions\OfferCreate.cs" />
+    <Compile Include="Models\Shared\Transactions\Payment.cs" />
+    <Compile Include="Models\Shared\Transactions\PaymentPath.cs" />
+    <Compile Include="Models\Shared\Transactions\SetFee.cs" />
+    <Compile Include="Models\Shared\Transactions\SetRegularKey.cs" />
+    <Compile Include="Models\Shared\Transactions\SignerListSet.cs" />
+    <Compile Include="Models\Shared\Transactions\TransactionBase.cs" />
+    <Compile Include="Models\Shared\Transactions\TrustSet.cs" />
+    <Compile Include="Models\Shared\TrustLine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

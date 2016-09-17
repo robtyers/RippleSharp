@@ -1,0 +1,1 @@
+﻿Ripple API documentation can be found here: https://ripple.com/build/rippled-apis/
