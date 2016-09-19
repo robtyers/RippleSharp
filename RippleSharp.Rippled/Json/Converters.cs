@@ -4,7 +4,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using RippleSharp.Rippled.Constants;
 using RippleSharp.Rippled.Interfaces;
-using RippleSharp.Rippled.Models.Responses.Server;
 using RippleSharp.Rippled.Models.Shared;
 using RippleSharp.Rippled.Models.Shared.LedgerNode;
 using RippleSharp.Rippled.Models.Shared.Server;
@@ -46,7 +45,14 @@ namespace RippleSharp.Rippled.Json
             }
         }
 
-        
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            var jObject = JObject.Load(reader);
+            var target = Create(objectType, jObject);
+            serializer.Populate(jObject.CreateReader(), target);
+
+            return target;
+        }
     }
 
     public class CurrencyAmountConverter : Newtonsoft.Json.Converters.CustomCreationConverter<IAmount>
@@ -110,8 +116,7 @@ namespace RippleSharp.Rippled.Json
             }
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
-            JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             var jObject = JObject.Load(reader);
             var target = Create(objectType, jObject);

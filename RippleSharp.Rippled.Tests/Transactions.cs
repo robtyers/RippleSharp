@@ -6,7 +6,7 @@ using RippleSharp.Rippled.Client.RpcJson.Requests.Transactions;
 using RippleSharp.Rippled.Enums;
 using RippleSharp.Rippled.Models.Requests.Transactions;
 
-namespace RippleSharp.Tests
+namespace RippleSharp.Rippled.Tests
 {
     [TestFixture]
     public class Transactions

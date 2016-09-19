@@ -9,7 +9,7 @@ using RippleSharp.Rippled.Enums;
 using RippleSharp.Rippled.Json;
 using RippleSharp.Rippled.Models.Requests.AccountInformation;
 
-namespace RippleSharp.Tests
+namespace RippleSharp.Rippled.Tests
 {
     [TestFixture]
     public class AccountInformation

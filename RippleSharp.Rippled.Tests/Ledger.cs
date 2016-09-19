@@ -7,7 +7,7 @@ using RippleSharp.Rippled.Enums;
 using RippleSharp.Rippled.Json;
 using RippleSharp.Rippled.Models.Requests.Ledger;
 
-namespace RippleSharp.Tests
+namespace RippleSharp.Rippled.Tests
 {
     [TestFixture]
     public class Ledger
