@@ -73,7 +73,7 @@ namespace RippleSharp.Rippled.Json
                 return new CurrencyIssuerValue();
 
             //if (jObject.Type != JTokenType.String)
-                return jObject;
+                return new object(); //jObject;
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

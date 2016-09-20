@@ -9,8 +9,8 @@ namespace RippleSharp.Rippled.Models.Shared.LedgerNode
         public int Flags { get; set; }
         public string Account { get; set; }
         public int Sequence { get; set; }
-        public IAmount TakerPays { get; set; }
-        public IAmount TakerGets { get; set; }
+        public CurrencyIssuerValue TakerPays { get; set; }
+        public CurrencyIssuerValue TakerGets { get; set; }
         public string BookDirectory { get; set; }
         public string BookNode { get; set; }
         public string OwnerNode { get; set; }

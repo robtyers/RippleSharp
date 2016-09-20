@@ -135,10 +135,13 @@ namespace RippleSharp.Rippled.Tests
 
             request.Params.Add(new AccountTxRequestParams
             {
-                Account = "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+                Account= "r9cZA1mLK5R5Am25ArfXFmqgNwjZgnfk59",
+                LedgerIndexMin = -1,
+                LedgerIndexMax = -1,
                 Binary = false,
-                Forward = false,
-                Limit = 2
+                //Count = false,
+                Limit = 10,
+                Forward = false
             });
 
             // Act
