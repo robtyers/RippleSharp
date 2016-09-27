@@ -219,6 +219,7 @@ namespace RippleSharp.Rippled.Tests
 
             // Assert
             Assert.AreEqual(Status.Error, response.Result.Status);
+            Assert.AreEqual(Error.NoPermission, response.Result.Error);
         }
 
         [Test]
@@ -238,6 +239,7 @@ namespace RippleSharp.Rippled.Tests
 
             // Assert
             Assert.AreEqual(Status.Error, response.Result.Status);
+            Assert.AreEqual(Error.NoPermission, response.Result.Error);
         }
     }
 }

@@ -7,9 +7,9 @@ namespace RippleSharp.Rippled.Models.Shared.LedgerNode
     {
         public LedgerEntryType LedgerEntryType { get; set; }
         public int Flags { get; set; }
-        public CurrencyIssuerValue Balance { get; set; }
-        public CurrencyIssuerValue LowLimit { get; set; }
-        public CurrencyIssuerValue HighLimit { get; set; }
+        public IAmount Balance { get; set; }
+        public IAmount LowLimit { get; set; }
+        public IAmount HighLimit { get; set; }
         public string PreviousTxnID { get; set; }
         public int PreviousTxnLgrSeq { get; set; }
         public string LowNode { get; set; }

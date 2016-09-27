@@ -21,6 +21,8 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests
                 Converters = new List<JsonConverter>
                 {
                     new LedgerNodeConverter(),
+                    new CurrencyAmountConverter(),
+                    new JobTypeConverter(),
                     new TolerantEnumConverter()
                 }
             };

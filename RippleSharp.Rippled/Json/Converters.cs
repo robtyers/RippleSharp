@@ -71,18 +71,29 @@ namespace RippleSharp.Rippled.Json
 
             if (jObject["value"] != null)
                 return new CurrencyIssuerValue();
-
-            //if (jObject.Type != JTokenType.String)
-                return new object(); //jObject;
+            
+            return new object(); 
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            var jObject = JObject.Load(reader);
-            var target = Create(objectType, jObject);
-            serializer.Populate(jObject.CreateReader(), target);
+            // http://stackoverflow.com/questions/6416017/json-net-deserializing-nested-dictionaries
+            
+            if (reader.TokenType == JsonToken.StartObject || reader.TokenType == JsonToken.Null)
+            {
+                var jObject = JObject.Load(reader);
+                var target = Create(objectType, jObject);
+                serializer.Populate(jObject.CreateReader(), target);
 
-            return target;
+                return target;
+            }
+            
+            return new CurrencyIssuerValue()
+            {
+                Currency = "XRP",
+                Issuer = string.Empty,
+                Value = float.Parse(reader.Value.ToString())
+            };
         }
     }
 

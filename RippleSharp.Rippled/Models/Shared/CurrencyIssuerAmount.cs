@@ -6,6 +6,6 @@ namespace RippleSharp.Rippled.Models.Shared
     {
         public string Currency { get; set; }
         public string Issuer { get; set; }
-        public decimal Amount { get; set; }
+        public float Amount { get; set; }
     }
 }

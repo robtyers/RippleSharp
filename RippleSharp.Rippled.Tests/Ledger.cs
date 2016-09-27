@@ -86,7 +86,6 @@ namespace RippleSharp.Rippled.Tests
             request.Params.Add(new LedgerDataRequestParams
             {
                 Binary = false,
-                LedgerHash = "8B5A0C5F6B198254A6E411AF55C29EE40AA86251D2E78DD0BB17647047FA9C24",
                 Limit = 5
             });
 
