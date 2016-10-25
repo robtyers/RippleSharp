@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class CanDeleteRequest : RpcJsonRequest<CanDeleteRequestParams>
     {
-        public override string Method => ApiCommands.CanDelete;
+        public override string Method => ApiMethod.CanDelete;
     }
 }

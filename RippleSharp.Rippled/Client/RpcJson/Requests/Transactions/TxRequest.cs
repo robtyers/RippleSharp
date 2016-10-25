@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class TxRequest : RpcJsonRequest<TxRequestParams>
     {
-        public override string Method => ApiCommands.Tx;
+        public override string Method => ApiMethod.Tx;
     }
 }

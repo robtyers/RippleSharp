@@ -2,7 +2,7 @@
 {
     public class LastClose
     {
-        public decimal ConvergeTimeS { get; set; }
+        public decimal ConvergeTime { get; set; }
         public int Proposers { get; set; }
     }
 }

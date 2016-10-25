@@ -1,12 +1,13 @@
 ﻿namespace RippleSharp.Rippled.Enums
 {
-    public enum TransactionType
+    public enum TransactionNodeType
     {
         Unknown,
         AccountSet,
         SetRegularKey,
         SignerListSet,
         OfferCancel,
-        OfferCreate
+        OfferCreate,
+        Payment
     }
 }

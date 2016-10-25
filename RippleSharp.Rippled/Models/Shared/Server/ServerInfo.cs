@@ -6,15 +6,15 @@ namespace RippleSharp.Rippled.Models.Shared.Server
     {
         public string BuildVersion { get; set; }
         public string CompleteLedgers { get; set; }
-        public string HostId { get; set; }
+        public string Hostid { get; set; }
         public int IoLatencyMs { get; set; }
         public LastClose LastClose { get; set; }
         public Load Load { get; set; }
-        public int LoadFactor { get; set; }
+        public float LoadFactor { get; set; }
         public int? LoadFactorLocal { get; set; }
         public int? LoadFactorNet { get; set; }
         public int? LoadFactorCluster { get; set; }
-        public int? LoadFactorFeeEscalation { get; set; }
+        public float? LoadFactorFeeEscalation { get; set; }
         public int? LoadFactorFeeQueue { get; set; }
         public int Peers { get; set; }
         public string PubkeyNode { get; set; }

@@ -11,12 +11,12 @@ namespace RippleSharp.Rippled.Models.Shared.Transactions
         public string Fee { get; set; }
         public int Flags { get; set; }
         public int LastLedgerSequence { get; set; }
-        public IEnumerable<object> Memos { get; set; } // ToDo: What are these?
+        public IEnumerable<dynamic> Memos { get; set; } // ToDo: What are these?
         public int Sequence { get; set; }
         public string SigningPubKey { get; set; }
-        public IEnumerable<object> Signers { get; set; } // ToDo: What are these?
+        public IEnumerable<dynamic> Signers { get; set; } // ToDo: What are these?
         public int SourceTag { get; set; }
-        public TransactionType TransactionType { get; set; }
+        public TransactionNodeType TransactionType { get; set; }
         public string TxnSignature { get; set; } 
     }
 }

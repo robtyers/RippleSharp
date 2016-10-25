@@ -4,6 +4,6 @@ namespace RippleSharp.Rippled.Interfaces
 {
     public interface ITransaction : IDefaultResolver
     {
-        TransactionType TransactionType { get; set; }
+        TransactionNodeType TransactionType { get; set; }
     }
 }

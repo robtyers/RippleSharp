@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.AccountInformation
 {
     public class AccountLinesRequest : RpcJsonRequest<AccountLinesRequestParams>
     {
-        public override string Method => ApiCommands.AccountLines;
+        public override string Method => ApiMethod.AccountLines;
     }
 }

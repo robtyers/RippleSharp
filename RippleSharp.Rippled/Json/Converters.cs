@@ -7,6 +7,7 @@ using RippleSharp.Rippled.Interfaces;
 using RippleSharp.Rippled.Models.Shared;
 using RippleSharp.Rippled.Models.Shared.LedgerNode;
 using RippleSharp.Rippled.Models.Shared.Server;
+using RippleSharp.Rippled.Models.Shared.Transactions;
 
 namespace RippleSharp.Rippled.Json
 {
@@ -55,6 +56,72 @@ namespace RippleSharp.Rippled.Json
         }
     }
 
+    public class TransactionConverter : Newtonsoft.Json.Converters.CustomCreationConverter<ITransaction>
+    {
+        // http://stackoverflow.com/questions/12832306/net-deserializing-json-to-multiple-types
+
+        public override ITransaction Create(Type objectType)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ITransaction Create(Type objectType, JObject jObject)
+        {
+            var type = (string)jObject.Property(nameof(TransactionType));
+
+            switch (type)
+            {
+                case TransactionType.AccountSet:
+                    return new AccountSet();
+
+                case TransactionType.OfferCancel:
+                    return new OfferCancel();
+
+                case TransactionType.OfferCreate:
+                    return new OfferCreate();
+
+                case TransactionType.Payment:
+                    return new Payment();
+
+                case TransactionType.SetRegularKey:
+                    return new SetRegularKey();
+
+                case TransactionType.SignerListSet:
+                    return new SignerListSet();
+                    
+                default:
+                    throw new ApplicationException($"The {nameof(TransactionType)} {type} is not supported!");
+            }
+        }
+
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            var jObject = JObject.Load(reader);
+            var target = Create(objectType, jObject);
+            serializer.Populate(jObject.CreateReader(), target);
+
+            return target;
+        }
+    }
+
+    public class NumericToStringConverter : JsonConverter
+    {
+        public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+        {
+            serializer.Serialize(writer, value.ToString());
+        }
+
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override bool CanConvert(Type objectType)
+        {
+            return objectType == typeof(float) || objectType == typeof(decimal);
+        }
+    }
+
     public class CurrencyAmountConverter : Newtonsoft.Json.Converters.CustomCreationConverter<IAmount>
     {
         // http://stackoverflow.com/questions/12832306/net-deserializing-json-to-multiple-types
@@ -66,15 +133,15 @@ namespace RippleSharp.Rippled.Json
 
         public dynamic Create(Type objectType, JObject jObject)
         {
-            if(jObject["amount"] != null)
+            if(jObject["Amount"] != null)
                 return new CurrencyIssuerAmount();
 
-            if (jObject["value"] != null)
+            if (jObject["Value"] != null)
                 return new CurrencyIssuerValue();
             
             return new object(); 
         }
-
+        
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             // http://stackoverflow.com/questions/6416017/json-net-deserializing-nested-dictionaries
@@ -110,12 +177,16 @@ namespace RippleSharp.Rippled.Json
         {
             var type = (string) jObject.Property(nameof(JobType));
 
-            switch (type.ToLowerInvariant())
+            switch (type)
             {
                 case JobType.ClientCommand:
                     return new JobTypeInProgress();
 
+                case JobType.AcceptLedger:
+                    return new JobTypePeakTime();
+
                 case JobType.PeerCommand:
+                case JobType.DiskAccess:
                 case JobType.TrustedProposal:
                 case JobType.UntrustedProposal:
                 case JobType.WriteNode:

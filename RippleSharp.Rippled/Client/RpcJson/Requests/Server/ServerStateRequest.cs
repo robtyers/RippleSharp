@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class ServerStateRequest : RpcJsonRequest<ServerStateRequestParams>
     {
-        public override string Method => ApiCommands.ServerState;
+        public override string Method => ApiMethod.ServerState;
     }
 }

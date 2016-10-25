@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using RippleSharp.Rippled.Models.Shared.AccountInformation;
 
 namespace RippleSharp.Rippled.Models.Responses.AccountInformation
 {
@@ -10,7 +11,7 @@ namespace RippleSharp.Rippled.Models.Responses.AccountInformation
         public int Limit { get; set; }
         public object Marker { get; set; }
         public int Offset { get; set; }
-        public IEnumerable<object> Transactions { get; set; } // ToDo: This is a tx object
+        public IEnumerable<Transaction> Transactions { get; set; }
         public bool Validated { get; set; }
     }
 }

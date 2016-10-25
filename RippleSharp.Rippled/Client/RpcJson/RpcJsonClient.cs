@@ -48,5 +48,7 @@ namespace RippleSharp.Rippled.Client.RpcJson
 
             return await message.Content.ReadAsStringAsync();
         }
+
+        public string RippledApiVersion => "0.30.1";
     }
 }

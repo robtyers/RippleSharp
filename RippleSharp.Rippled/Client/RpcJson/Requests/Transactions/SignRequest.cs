@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class SignRequest : RpcJsonRequest<SignRequestParams>
     {
-        public override string Method => ApiCommands.Sign;
+        public override string Method => ApiMethod.Sign;
     }
 }

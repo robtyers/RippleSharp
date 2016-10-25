@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class ConsensusInfoRequest : RpcJsonRequest<ConsensusInfoRequestParams>
     {
-        public override string Method => ApiCommands.ConsensusInfo;
+        public override string Method => ApiMethod.ConsensusInfo;
     }
 }

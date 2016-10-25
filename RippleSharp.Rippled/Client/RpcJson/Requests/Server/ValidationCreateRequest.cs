@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class ValidationCreateRequest : RpcJsonRequest<ValidationCreateRequestParams>
     {
-        public override string Method => ApiCommands.ValidationCreate;
+        public override string Method => ApiMethod.ValidationCreate;
     }
 }

@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class GetCountsRequest : RpcJsonRequest<GetCountsRequestParams>
     {
-        public override string Method => ApiCommands.GetCounts;
+        public override string Method => ApiMethod.GetCounts;
     }
 }

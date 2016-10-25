@@ -8,23 +8,32 @@ using RippleSharp.Rippled.Constants;
 using RippleSharp.Rippled.Enums;
 using RippleSharp.Rippled.Json;
 using RippleSharp.Rippled.Models.Requests.AccountInformation;
+using RippleSharp.Rippled.Tests.RpcJson.TestData.MessageHandler;
 
-namespace RippleSharp.Rippled.Tests
+namespace RippleSharp.Rippled.Tests.RpcJson.Tests
 {
     [TestFixture]
     public class AccountInformation
     {
         private readonly RpcJsonClient _client;
-        private const string Url = "http://s1.ripple.com:51234";
-
+        
         public AccountInformation()
         {
-            var client = new HttpClient {BaseAddress = new Uri(Url)};
+            //var client = new HttpClient
+            //{
+            //    BaseAddress = new Uri("http://s1.ripple.com:51234")
+            //};
+
+            var client = new HttpClient(new RippleSharpMessageHandler())
+            {
+                BaseAddress = new Uri("http://xxxx:1234")
+            };
+
             _client = new RpcJsonClient(client);
         }
 
         [Test]
-        public void CanCallAccountCurrencies()
+        public void AccountCurrencies()
         {
             // Arrange
             var request = new AccountCurrencyRequest();
@@ -38,15 +47,14 @@ namespace RippleSharp.Rippled.Tests
             });
             
             // Act
-            var response =
-                _client.AccountInformation.AccountCurrenciesAsync(request).Result;
+            var response = _client.AccountInformation.AccountCurrenciesAsync(request).Result;
             
             // Assert
             Assert.AreEqual(Status.Success, response.Result.Status);
         }
 
         [Test]
-        public void CanGetAccountInfo()
+        public void AccountInfo()
         {
             // Arrange
             var request = new AccountInfoRequest();
@@ -59,15 +67,14 @@ namespace RippleSharp.Rippled.Tests
             });
 
             // Act
-            var response =
-                _client.AccountInformation.AccountInfoAsync(request).Result;
+            var response = _client.AccountInformation.AccountInfoAsync(request).Result;
 
             // Assert
             Assert.AreEqual(Status.Success, response.Result.Status);
         }
 
         [Test]
-        public void CanGetAccountLines()
+        public void AccountLines()
         {
             // Arrange
             var request = new AccountLinesRequest();
@@ -78,15 +85,14 @@ namespace RippleSharp.Rippled.Tests
             });
 
             // Act
-            var response =
-                _client.AccountInformation.AccountLinesAsync(request).Result;
+            var response = _client.AccountInformation.AccountLinesAsync(request).Result;
 
             // Assert
             Assert.AreEqual(Status.Success, response.Result.Status);
         }
 
         [Test]
-        public void CanGetAccountObjects()
+        public void AccountObjects()
         {
             // Arrange
             var request = new AccountObjectsRequest();
@@ -100,15 +106,14 @@ namespace RippleSharp.Rippled.Tests
             });
 
             // Act
-            var response =
-                _client.AccountInformation.AccountObjectsAsync(request).Result;
+            var response = _client.AccountInformation.AccountObjectsAsync(request).Result;
 
             // Assert
             Assert.AreEqual(Status.Success, response.Result.Status);
         }
 
         [Test]
-        public void CanGetAccountOffers()
+        public void AccountOffers()
         {
             // Arrange
             var request = new AccountOffersRequest();
@@ -120,15 +125,14 @@ namespace RippleSharp.Rippled.Tests
             });
 
             // Act
-            var response =
-                _client.AccountInformation.AccountOffersAsync(request).Result;
+            var response = _client.AccountInformation.AccountOffersAsync(request).Result;
 
             // Assert
             Assert.AreEqual(Status.Success, response.Result.Status);
         }
 
         [Test]
-        public void CanGetAccountTx()
+        public void AccountTx()
         {
             // Arrange
             var request = new AccountTxRequest();
@@ -153,7 +157,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CanGetNorippleCheck()
+        public void NorippleCheck()
         {
             // Arrange
             var request = new NorippleCheckRequest();
@@ -176,7 +180,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CanGetGatewayBalances()
+        public void GatewayBalances()
         {
             // Arrange
             var request = new GatewayBalancesRequest();
@@ -202,7 +206,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CannotGetWalletProposeWithKeyType()
+        public void WalletProposeWithKeyType()
         {
             // Arrange
             var request = new WalletProposeRequest();
@@ -218,12 +222,11 @@ namespace RippleSharp.Rippled.Tests
                 _client.AccountInformation.WalletProposeAsync(request).Result;
 
             // Assert
-            Assert.AreEqual(Status.Error, response.Result.Status);
-            Assert.AreEqual(Error.NoPermission, response.Result.Error);
+            Assert.AreEqual(Status.Success, response.Result.Status);
         }
 
         [Test]
-        public void CannotGetWalletProposeWithoutKeyType()
+        public void WalletProposeWithoutKeyType()
         {
             // Arrange
             var request = new WalletProposeRequest();
@@ -238,8 +241,7 @@ namespace RippleSharp.Rippled.Tests
                 _client.AccountInformation.WalletProposeAsync(request).Result;
 
             // Assert
-            Assert.AreEqual(Status.Error, response.Result.Status);
-            Assert.AreEqual(Error.NoPermission, response.Result.Error);
+            Assert.AreEqual(Status.Success, response.Result.Status);
         }
     }
 }

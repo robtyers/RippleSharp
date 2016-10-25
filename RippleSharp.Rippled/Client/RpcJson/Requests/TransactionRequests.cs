@@ -9,14 +9,19 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests
     {
         public TransactionRequests(IRippledClient client) : base(client) { }
 
-        public async Task<RpcJsonResponse<TxResult>> TxAsync (TxRequest request)
+        public async Task<RpcJsonResponse<TransactionEntryResult>> TxAsync (TxRequest request)
         {
-            return await PostAsync<RpcJsonResponse<TxResult>, TxResult>(request);
+            return await PostAsync<RpcJsonResponse<TransactionEntryResult>, TransactionEntryResult>(request);
         }
 
         public async Task<RpcJsonResponse<TransactionEntryResult>> TransactionEntryAsync(TransactionEntryRequest request)
         {
             return await PostAsync<RpcJsonResponse<TransactionEntryResult>, TransactionEntryResult>(request);
+        }
+
+        public async Task<RpcJsonResponse<RipplePathFindResult>> RipplePathFindAsync(RipplePathFindRequest request)
+        {
+            return await PostAsync<RpcJsonResponse<RipplePathFindResult>, RipplePathFindResult>(request);
         }
 
         public async Task<RpcJsonResponse<SignResult>> SignAsync(SignRequest request)

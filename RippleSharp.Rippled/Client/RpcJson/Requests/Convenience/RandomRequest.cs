@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Convenience
 {
     public class RandomRequest : RpcJsonRequest<RandomRequestParams>
     {
-        public override string Method => ApiCommands.Random;
+        public override string Method => ApiMethod.Random;
     }
 }

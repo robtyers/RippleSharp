@@ -6,7 +6,7 @@ namespace RippleSharp.Rippled.Models.Shared.Ledger
     public class LedgerHeader
     {
         public string AccountHash { get; set; }
-        public IEnumerable<ILedgerNode> Accounts { get; set; } // ToDo: Check this
+        public IEnumerable<ILedgerNode> Accounts { get; set; } // ToDo: Are there more types?
         public int CloseTime { get; set; }
         public string CloseTimeHuman { get; set; }
         public int CloseTimeResolution { get; set; }

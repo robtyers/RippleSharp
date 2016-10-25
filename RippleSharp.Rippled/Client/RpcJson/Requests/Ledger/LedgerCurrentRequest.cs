@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Ledger
 {
     public class LedgerCurrentRequest : RpcJsonRequest<LedgerCurrentRequestParams>
     {
-        public override string Method => ApiCommands.LedgerCurrent;
+        public override string Method => ApiMethod.LedgerCurrent;
     }
 }

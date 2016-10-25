@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Ledger
 {
     public class LedgerDataRequest : RpcJsonRequest<LedgerDataRequestParams>
     {
-        public override string Method => ApiCommands.LedgerData;
+        public override string Method => ApiMethod.LedgerData;
     }
 }

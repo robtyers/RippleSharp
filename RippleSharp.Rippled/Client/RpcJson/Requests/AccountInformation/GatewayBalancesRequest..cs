@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.AccountInformation
 {
     public class GatewayBalancesRequest : RpcJsonRequest<GatewayBalancesRequestParams>
     {
-        public override string Method => ApiCommands.GatewayBalances;
+        public override string Method => ApiMethod.GatewayBalances;
     }
 }

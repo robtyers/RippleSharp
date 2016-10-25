@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class SubmitOnlyRequest : RpcJsonRequest<SubmitOnlyRequestParams>
     {
-        public override string Method => ApiCommands.Submit;
+        public override string Method => ApiMethod.Submit;
     }
 }

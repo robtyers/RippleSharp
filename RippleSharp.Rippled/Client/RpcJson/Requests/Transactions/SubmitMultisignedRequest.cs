@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class SubmitMultisignedRequest : RpcJsonRequest<SubmitMultisignedRequestParams>
     {
-        public override string Method => ApiCommands.SubmitMultisigned;
+        public override string Method => ApiMethod.SubmitMultisigned;
     }
 }

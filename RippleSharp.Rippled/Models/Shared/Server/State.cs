@@ -6,6 +6,7 @@ namespace RippleSharp.Rippled.Models.Shared.Server
     {
         public string BuildVersion { get; set; }
         public string CompleteLedgers { get; set; }
+        public LastClose LastClose { get; set; }
         public int IoLatencyMs { get; set; }
         public Load Load { get; set; }
         public int LoadBase { get; set; }

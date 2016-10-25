@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Ledger
 {
     public class LedgerEntryRequest : RpcJsonRequest<LedgerEntryRequestParams>
     {
-        public override string Method => ApiCommands.LedgerEntry;
+        public override string Method => ApiMethod.LedgerEntry;
     }
 }

@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Ledger
 {
     public class LedgerClosedRequest : RpcJsonRequest<LedgerClosedRequestParams>
     {
-        public override string Method => ApiCommands.LedgerClosed;
+        public override string Method => ApiMethod.LedgerClosed;
     }
 }

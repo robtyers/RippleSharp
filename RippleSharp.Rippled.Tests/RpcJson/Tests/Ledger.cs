@@ -6,23 +6,32 @@ using RippleSharp.Rippled.Client.RpcJson.Requests.Ledger;
 using RippleSharp.Rippled.Enums;
 using RippleSharp.Rippled.Json;
 using RippleSharp.Rippled.Models.Requests.Ledger;
+using RippleSharp.Rippled.Tests.RpcJson.TestData.MessageHandler;
 
-namespace RippleSharp.Rippled.Tests
+namespace RippleSharp.Rippled.Tests.RpcJson.Tests
 {
     [TestFixture]
     public class Ledger
     {
         private readonly RpcJsonClient _client;
-        private const string Url = "http://s1.ripple.com:51234";
-
+        
         public Ledger()
         {
-            var client = new HttpClient { BaseAddress = new Uri(Url) };
+            //var client = new HttpClient
+            //{
+            //    BaseAddress = new Uri("http://s1.ripple.com:51234")
+            //};
+
+            var client = new HttpClient(new RippleSharpMessageHandler())
+            {
+                BaseAddress = new Uri("http://xxxx:1234")
+            };
+
             _client = new RpcJsonClient(client);
         }
 
         [Test]
-        public void CanCallLedger()
+        public void CallLedger()
         {
             // Arrange
             var request = new LedgerRequest();
@@ -46,7 +55,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CanCallLedgerClosed()
+        public void LedgerClosed()
         {
             // Arrange
             var request = new LedgerClosedRequest();
@@ -62,7 +71,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CanCallLedgerCurrent()
+        public void LedgerCurrent()
         {
             // Arrange
             var request = new LedgerCurrentRequest();
@@ -78,7 +87,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CanCallLedgerData()
+        public void LedgerData()
         {
             // Arrange
             var request = new LedgerDataRequest();
@@ -98,7 +107,7 @@ namespace RippleSharp.Rippled.Tests
         }
 
         [Test]
-        public void CanCallLedgerEntry()
+        public void LedgerEntry()
         {
             // Arrange
             var request = new LedgerEntryRequest();

@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class ServerInfoRequest : RpcJsonRequest<ServerInfoRequestParams>
     {
-        public override string Method => ApiCommands.ServerInfo;
+        public override string Method => ApiMethod.ServerInfo;
     }
 }

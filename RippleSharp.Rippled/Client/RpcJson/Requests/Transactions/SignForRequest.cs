@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class SignForRequest : RpcJsonRequest<SignForRequestParams>
     {
-        public override string Method => ApiCommands.SignFor;
+        public override string Method => ApiMethod.SignFor;
     }
 }

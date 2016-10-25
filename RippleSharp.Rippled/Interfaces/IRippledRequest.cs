@@ -1,4 +1,7 @@
 ﻿namespace RippleSharp.Rippled.Interfaces
 {
-    public interface IRippledRequest { }
+    public interface IRippledRequest
+    {
+        string Method { get; }
+    }
 }

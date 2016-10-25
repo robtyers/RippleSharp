@@ -1,6 +1,6 @@
 ﻿namespace RippleSharp.Rippled.Constants
 {
-    public static class ApiCommands
+    public static class ApiMethod
     {
         // Accounts
         public const string AccountCurrencies = "account_currencies";
@@ -29,7 +29,7 @@
         // Server
         public const string CanDelete = "can_delete";
         public const string ConsensusInfo = "consensus_info";
-        public const string FeeInfo = "fee_info";
+        public const string Fee = "fee";
         public const string Feature = "feature";
         public const string FetchInfo = "fetch_info";
         public const string GetCounts = "get_counts";

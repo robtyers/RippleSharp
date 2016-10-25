@@ -1,0 +1,30 @@
+﻿{
+  "result": {
+    "ledger_hash": "2B8A74B6CF11A3569F52EBA7047FAA0CA07D5B52484B9CC46FB9BA86F4B6C546",
+    "ledger_index": 24672073,
+    "receive_currencies": [
+      "BTC",
+      "CNY",
+      "DYM",
+      "EUR",
+      "JOE",
+      "MXN",
+      "USD",
+      "015841551A748AD2C1F76FF6ECB0CCCD00000000"
+    ],
+    "send_currencies": [
+      "ASP",
+      "BTC",
+      "CHF",
+      "CNY",
+      "DYM",
+      "EUR",
+      "JOE",
+      "JPY",
+      "MXN",
+      "USD"
+    ],
+    "status": "success",
+    "validated": true
+  }
+}

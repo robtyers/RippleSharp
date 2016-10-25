@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class BookOffersRequest : RpcJsonRequest<BookOffersRequestParams>
     {
-        public override string Method => ApiCommands.BookOffers;
+        public override string Method => ApiMethod.BookOffers;
     }
 }

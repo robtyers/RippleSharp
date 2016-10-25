@@ -1,0 +1,82 @@
+﻿{
+  "result": {
+    "info": {
+      "build_version": "0.30.1-rc3",
+      "complete_ledgers": "18611104-18614536",
+      "hostid": "trace",
+      "io_latency_ms": 1,
+      "last_close": {
+        "converge_time_s": 3.002,
+        "proposers": 5
+      },
+      "load": {
+        "job_types": [
+          {
+            "job_type": "untrustedProposal",
+            "per_second": 3
+          },
+          {
+            "in_progress": 1,
+            "job_type": "clientCommand"
+          },
+          {
+            "job_type": "writeObjects",
+            "per_second": 1
+          },
+          {
+            "job_type": "trustedProposal",
+            "per_second": 1
+          },
+          {
+            "job_type": "peerCommand",
+            "per_second": 61
+          },
+          {
+            "job_type": "WriteNode",
+            "per_second": 41
+          }
+        ],
+        "threads": 6
+      },
+      "load_factor": 1000,
+      "load_factor_net": 1000,
+      "peers": 10,
+      "pubkey_node": "n94UE1ukbq6pfZY9j54sv2A1UrEeHZXLbns3xK5CzU9NbNREytaa",
+      "pubkey_validator": "n9KM73uq5BM3Fc6cxG3k5TruvbLc8Ffq17JZBmWC4uP4csL4rFST",
+      "server_state": "proposing",
+      "state_accounting": {
+        "connected": {
+          "duration_us": "150510079",
+          "transitions": 1
+        },
+        "disconnected": {
+          "duration_us": "1827731",
+          "transitions": 1
+        },
+        "full": {
+          "duration_us": "166170134942",
+          "transitions": 1838
+        },
+        "syncing": {
+          "duration_us": "6196072160",
+          "transitions": 1839
+        },
+        "tracking": {
+          "duration_us": "9023236",
+          "transitions": 1839
+        }
+      },
+      "uptime": 172520,
+      "validated_ledger": {
+        "age": 4,
+        "base_fee_xrp": 1e-05,
+        "hash": "B69EDD86AB57C6F80F5AA6D4246AC2C9EC0BE0E49649FBC46EEE12DE56500DCA",
+        "reserve_base_xrp": 20,
+        "reserve_inc_xrp": 5,
+        "seq": 18614536
+      },
+      "validation_quorum": 4
+    },
+    "status": "success"
+  }
+}

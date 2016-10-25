@@ -2,7 +2,7 @@
 
 namespace RippleSharp.Rippled.Models.Responses.Server
 {
-    public class FeeResult
+    public class FeeResult : RippledResult
     {
         public string CurrentLedgerSize { get; set; }
         public string CurrentQueueSize { get; set; }

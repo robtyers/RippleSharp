@@ -1,4 +1,5 @@
 ﻿using RippleSharp.Rippled.Interfaces;
+using RippleSharp.Rippled.Models.Shared.Transactions;
 
 namespace RippleSharp.Rippled.Models.Responses.Transactions
 {
@@ -6,7 +7,7 @@ namespace RippleSharp.Rippled.Models.Responses.Transactions
     {
         public string LedgerIndex { get; set; }
         public string LedgerHash { get; set; }
-        public object Metadata { get; set; }
+        public Meta Metadata { get; set; }
         public ITransaction TxJson { get; set; }
     }
 }

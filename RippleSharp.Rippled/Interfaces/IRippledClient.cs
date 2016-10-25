@@ -13,5 +13,6 @@ namespace RippleSharp.Rippled.Interfaces
 
         Task<bool> ConnectedAsync();
         Task<string> PostAsync(IRippledRequest request);
+        string RippledApiVersion { get; }
     }
 }

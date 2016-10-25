@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.AccountInformation
 {
     public class WalletProposeRequest : RpcJsonRequest<WalletProposeRequestParams>
     {
-        public override string Method => ApiCommands.WalletPropose;
+        public override string Method => ApiMethod.WalletPropose;
     }
 }

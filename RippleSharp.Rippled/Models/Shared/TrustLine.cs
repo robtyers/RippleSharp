@@ -9,9 +9,9 @@
         public string LimitPeer { get; set; }
         public int? QualityIn { get; set; }
         public int? QualityOut { get; set; }
-        public bool NoRipple { get; set; }
-        public bool NoRipplePeer { get; set; }
-        public bool Freeze { get; set; }
-        public bool FreezePeer { get; set; }
+        public bool? NoRipple { get; set; }
+        public bool? NoRipplePeer { get; set; }
+        public bool? Freeze { get; set; }
+        public bool? FreezePeer { get; set; }
     }
 }

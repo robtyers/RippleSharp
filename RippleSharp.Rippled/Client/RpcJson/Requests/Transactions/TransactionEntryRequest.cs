@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class TransactionEntryRequest : RpcJsonRequest<TransactionEntryRequestParams>
     {
-        public override string Method => ApiCommands.TransactionEntry;
+        public override string Method => ApiMethod.TransactionEntry;
     }
 }

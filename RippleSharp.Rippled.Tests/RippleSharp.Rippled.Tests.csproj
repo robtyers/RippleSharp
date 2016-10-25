@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.4.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.4.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -44,10 +48,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountInformation.cs" />
-    <Compile Include="Ledger.cs" />
+    <Compile Include="RpcJson\Tests\AccountInformation.cs" />
+    <Compile Include="RpcJson\Tests\Convenience.cs" />
+    <Compile Include="RpcJson\Tests\Ledger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Transactions.cs" />
+    <Compile Include="RpcJson\Tests\Server.cs" />
+    <Compile Include="RpcJson\Tests\Transactions.cs" />
+    <Compile Include="RpcJson\TestData\MessageHandler\RippleSharpMessageHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RippleSharp.Rippled\RippleSharp.Rippled.csproj">
@@ -56,8 +63,44 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="RpcJson\TestData\AccountInfo.json" />
+    <EmbeddedResource Include="RpcJson\TestData\AccountLines.json" />
+    <EmbeddedResource Include="RpcJson\TestData\AccountObjects.json" />
+    <EmbeddedResource Include="RpcJson\TestData\AccountOffers.json" />
+    <EmbeddedResource Include="RpcJson\TestData\AccountTx.json" />
+    <EmbeddedResource Include="RpcJson\TestData\BookOffers.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Connect.json" />
+    <EmbeddedResource Include="RpcJson\TestData\ConsensusInfo.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Feature.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Fee.json" />
+    <EmbeddedResource Include="RpcJson\TestData\FetchInfo.json" />
+    <EmbeddedResource Include="RpcJson\TestData\GatewayBalances.json" />
+    <EmbeddedResource Include="RpcJson\TestData\GetCounts.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Ledger.json" />
+    <EmbeddedResource Include="RpcJson\TestData\LedgerClosed.json" />
+    <EmbeddedResource Include="RpcJson\TestData\LedgerCurrent.json" />
+    <EmbeddedResource Include="RpcJson\TestData\LedgerData.json" />
+    <EmbeddedResource Include="RpcJson\TestData\LedgerEntry.json" />
+    <EmbeddedResource Include="RpcJson\TestData\NorippleCheck.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Ping.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Random.json" />
+    <EmbeddedResource Include="RpcJson\TestData\RipplePathFind.json" />
+    <EmbeddedResource Include="RpcJson\TestData\ServerInfo.json" />
+    <EmbeddedResource Include="RpcJson\TestData\ServerState.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Sign.json" />
+    <EmbeddedResource Include="RpcJson\TestData\SignFor.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Stop.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Submit.json" />
+    <EmbeddedResource Include="RpcJson\TestData\SubmitMultisigned.json" />
+    <EmbeddedResource Include="RpcJson\TestData\TransactionEntry.json" />
+    <EmbeddedResource Include="RpcJson\TestData\Tx.json" />
+    <EmbeddedResource Include="RpcJson\TestData\ValidationCreate.json" />
+    <EmbeddedResource Include="RpcJson\TestData\WalletPropose.json" />
     <None Include="packages.config" />
+    <EmbeddedResource Include="RpcJson\TestData\AccountCurrencies.json" />
+    <EmbeddedResource Include="RpcJson\TestData\CanDelete.json" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

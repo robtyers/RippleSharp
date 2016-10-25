@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Server
 {
     public class FetchInfoRequest : RpcJsonRequest<FetchInfoRequestParams>
     {
-        public override string Method => ApiCommands.FetchInfo;
+        public override string Method => ApiMethod.FetchInfo;
     }
 }

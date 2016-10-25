@@ -5,6 +5,6 @@ namespace RippleSharp.Rippled.Client.RpcJson.Requests.Transactions
 {
     public class RipplePathFindRequest : RpcJsonRequest<RipplePathFindRequestParams>
     {
-        public override string Method => ApiCommands.RipplePathFind;
+        public override string Method => ApiMethod.RipplePathFind;
     }
 }
